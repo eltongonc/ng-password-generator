@@ -3,49 +3,34 @@
     <h1 class="text-5xl font-bold mb-8">{{ title }}</h1>
 
     <!-- Number input -->
-    <div class="form-control w-full max-w-xs mb-6">
-      <label class="label">
-        <span class="label-text">Password Length</span>
-      </label>
-      <input
-        type="number"
-        name="length"
-        id="length"
-        [value]="length"
-        (input)="onSetLength($event)"
-        class="input input-primary input-bordered w-full max-w-xs"
-      />
-    </div>
+    <app-input
+      type="number"
+      label="Password Length"
+      name="length"
+      id="length"
+      [value]="'' + length"
+      (handleInput)="onSetLength($event)"
+    ></app-input>
 
     <!-- Options -->
     <div class="mb-6">
-      <div class="form-control">
-        <label class="label cursor-pointer justify-start">
-          <input
-            type="checkbox"
-            name="numbers"
-            id="number"
-            [checked]="hasNumbers"
-            (change)="onCheck('number', $event)"
-            class="checkbox checkbox-primary mr-2"
-          />
-          <span class="label-text">Use Numbers</span>
-        </label>
-      </div>
+      <app-input
+        type="checkbox"
+        label="Use Numbers"
+        name="numbers"
+        id="numbers"
+        [isChecked]="hasNumbers"
+        (handleCheck)="onCheck('number', $event)"
+      ></app-input>
 
-      <div class="form-control">
-        <label class="label cursor-pointer justify-start">
-          <input
-            type="checkbox"
-            name="symbols"
-            id="symbol"
-            [checked]="hasSymbols"
-            (change)="onCheck('symbol', $event)"
-            class="checkbox checkbox-primary mr-2"
-          />
-          <span class="label-text">Use Symbols</span>
-        </label>
-      </div>
+      <app-input
+        type="checkbox"
+        label="Use Symbols"
+        name="symbols"
+        id="symbol"
+        [isChecked]="hasSymbols"
+        (handleCheck)="onCheck('symbol', $event)"
+      ></app-input>
     </div>
 
     <!-- Submit button -->
@@ -56,18 +41,13 @@
     <!-- Output -->
     <div *ngIf="password">
       <hr class="my-4" />
-      <div class="form-control w-full max-w-xs mb-6">
-        <label class="label">
-          <span class="label-text">Your password</span>
-        </label>
-        <input
-          type="string"
-          name="output"
-          id="output"
-          [value]="password"
-          class="input input-primary input-bordered w-full max-w-xs"
-        />
-      </div>
+      <app-input
+        type="string"
+        label="Your password"
+        name="output"
+        id="output"
+        [value]="password"
+      ></app-input>
     </div>
   </div>
 </div>

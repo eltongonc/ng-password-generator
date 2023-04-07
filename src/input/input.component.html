@@ -1,0 +1,27 @@
+<div class="form-control" *ngIf="type === 'checkbox'">
+  <label class="label cursor-pointer justify-start">
+    <input
+      [type]="type"
+      [name]="name"
+      [id]="name"
+      [checked]="isChecked"
+      (change)="onCheck($event)"
+      class="checkbox checkbox-primary mr-2"
+    />
+    <span class="label-text">{{ label }}</span>
+  </label>
+</div>
+
+<div *ngIf="type !== 'checkbox'" class="form-control w-full max-w-xs mb-6">
+  <label class="label">
+    <span class="label-text">{{ label }}</span>
+  </label>
+  <input
+    [type]="type"
+    [name]="name"
+    [id]="name"
+    [value]="value"
+    (input)="onInput($event)"
+    class="input input-primary input-bordered w-full max-w-xs"
+  />
+</div>

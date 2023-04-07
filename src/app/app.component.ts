@@ -16,15 +16,13 @@ export class AppComponent {
 
   password = '';
 
-  onSetLength(e: Event) {
-    const val = +(e.target as HTMLInputElement).value;
+  onSetLength(val: string) {
+    const num = +val;
 
-    this.length = val;
+    this.length = num;
   }
 
-  onCheck(type: CheckBoxType, e: Event) {
-    const { checked } = e.target as HTMLInputElement;
-
+  onCheck(type: CheckBoxType, checked: boolean) {
     switch (type) {
       case 'number':
         this.hasNumbers = checked;
