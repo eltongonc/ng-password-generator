@@ -23,20 +23,6 @@
         <label class="label cursor-pointer justify-start">
           <input
             type="checkbox"
-            name="letters"
-            id="letter"
-            [checked]="hasLetters"
-            (change)="onCheck('letter', $event)"
-            class="checkbox checkbox-primary mr-2"
-          />
-          <span class="label-text">Use Letters</span>
-        </label>
-      </div>
-
-      <div class="form-control">
-        <label class="label cursor-pointer justify-start">
-          <input
-            type="checkbox"
             name="numbers"
             id="number"
             [checked]="hasNumbers"
@@ -63,26 +49,25 @@
     </div>
 
     <!-- Submit button -->
-    <button class="btn btn-primary w-full" (click)="onGeneratePassword()">
+    <button class="btn btn-primary w-full mb-2" (click)="onGeneratePassword()">
       Generate
     </button>
 
     <!-- Output -->
     <div *ngIf="password">
       <hr class="my-4" />
-      <label class="block mb-2" for="output">Your password</label>
-      <input
-        class="border w-full px-4 py-2"
-        type="string"
-        name="output"
-        id="output"
-        [value]="password"
-      />
+      <div class="form-control w-full max-w-xs mb-6">
+        <label class="label">
+          <span class="label-text">Your password</span>
+        </label>
+        <input
+          type="string"
+          name="output"
+          id="output"
+          [value]="password"
+          class="input input-primary input-bordered w-full max-w-xs"
+        />
+      </div>
     </div>
   </div>
 </div>
-
-<p>length: {{ length }}</p>
-<p>numbers: {{ hasNumbers }}</p>
-<p>letters: {{ hasLetters }}</p>
-<p>symbols: {{ hasSymbols }}</p>

@@ -11,7 +11,6 @@ export class AppComponent {
   title = 'Password Generator';
 
   length = 10;
-  hasLetters = true;
   hasNumbers = false;
   hasSymbols = false;
 
@@ -27,9 +26,6 @@ export class AppComponent {
     const { checked } = e.target as HTMLInputElement;
 
     switch (type) {
-      case 'letter':
-        this.hasLetters = checked;
-        break;
       case 'number':
         this.hasNumbers = checked;
         break;
@@ -48,11 +44,7 @@ export class AppComponent {
     const symbols = '!@#$%^&*()';
     let output = '';
 
-    let all = '';
-
-    if (this.hasLetters) {
-      all = all.concat(letters);
-    }
+    let all = letters;
 
     if (this.hasNumbers) {
       all = all.concat(numbers);
