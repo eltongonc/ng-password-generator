@@ -2,9 +2,7 @@
   <label class="label cursor-pointer justify-start">
     <input
       [type]="type"
-      [name]="name"
-      [id]="name"
-      [checked]="isChecked"
+      [checked]="checked"
       (change)="onCheck($event)"
       class="checkbox checkbox-primary mr-2"
     />
@@ -18,8 +16,6 @@
   </label>
   <input
     [type]="type"
-    [name]="name"
-    [id]="name"
     [value]="value"
     (input)="onInput($event)"
     class="input input-primary input-bordered w-full max-w-xs"

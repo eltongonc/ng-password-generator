@@ -6,9 +6,7 @@
     <app-input
       type="number"
       label="Password Length"
-      name="length"
-      id="length"
-      [value]="'' + length"
+      [value]="length"
       (handleInput)="onSetLength($event)"
     ></app-input>
 
@@ -17,18 +15,14 @@
       <app-input
         type="checkbox"
         label="Use Numbers"
-        name="numbers"
-        id="numbers"
-        [isChecked]="hasNumbers"
+        [checked]="hasNumbers"
         (handleCheck)="onCheck('number', $event)"
       ></app-input>
 
       <app-input
         type="checkbox"
         label="Use Symbols"
-        name="symbols"
-        id="symbol"
-        [isChecked]="hasSymbols"
+        [checked]="hasSymbols"
         (handleCheck)="onCheck('symbol', $event)"
       ></app-input>
     </div>
@@ -44,8 +38,6 @@
       <app-input
         type="string"
         label="Your password"
-        name="output"
-        id="output"
         [value]="password"
       ></app-input>
     </div>

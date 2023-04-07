@@ -7,8 +7,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 export class InputComponent {
   @Input() type!: 'checkbox' | 'string' | 'number';
   @Input() label!: string;
-  @Input() name!: string;
-  @Input() isChecked = false;
+  @Input() checked = false;
   @Input() value!: string | number;
   @Output() handleCheck = new EventEmitter<boolean>(false);
   @Output() handleInput = new EventEmitter<string>();
@@ -16,7 +15,7 @@ export class InputComponent {
   onCheck(e: Event) {
     const { checked } = e.target as HTMLInputElement;
 
-    this.isChecked = checked;
+    this.checked = checked;
     this.handleCheck.emit(checked);
   }
 
